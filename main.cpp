@@ -22,6 +22,7 @@ int main() {
     std::cout << "Tentar adicionar objeto repetido no inventário -> " << livro3->getNome() << std::endl;
     //todo tentar adicionarObjeto(pelo nome)
     //todo tentar
+    //todo escrever para ficheiro a lista de objeto que já estão dentro do inventario
     inventario.adicionarObjeto(livro3);
     std::cout << std::endl;
 

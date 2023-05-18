@@ -26,6 +26,9 @@ public:
 
     // Listar objetos ordenados por nome
     void listarObjetosPorNome() const;
+
+    // Procurar objeto
+    void procurarObjeto() const;
 };
 
 

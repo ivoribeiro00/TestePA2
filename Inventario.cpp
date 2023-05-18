@@ -70,3 +70,10 @@ void Inventario::listarObjetosPorNome() const {
     }
 }
 
+// Procurar objeto
+void Inventario::procurarObjeto() const {
+
+
+
+}
+
