@@ -20,6 +20,8 @@ int main() {
 
 
     std::cout << "Tentar adicionar objeto repetido no inventário -> " << livro3->getNome() << std::endl;
+    //todo tentar adicionarObjeto(pelo nome)
+    //todo tentar
     inventario.adicionarObjeto(livro3);
     std::cout << std::endl;
 
