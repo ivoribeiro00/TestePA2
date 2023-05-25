@@ -20,9 +20,15 @@ int main() {
 
 
     std::cout << "Tentar adicionar objeto repetido no inventário -> " << livro3->getNome() << std::endl;
+
+    //todo antes do menu ler o inventário do ficheiro
+
     //todo tentar adicionarObjeto(pelo nome)
-    //todo tentar
-    //todo escrever para ficheiro a lista de objeto que já estão dentro do inventario
+
+    //todo tentar separar objetos por localizaçoes
+
+    //todo tentar escrever para ficheiro a lista de objeto que já estão dentro do inventario ao fechar menu
+
     inventario.adicionarObjeto(livro3);
     std::cout << std::endl;
 

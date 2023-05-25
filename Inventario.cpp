@@ -8,7 +8,7 @@
 Inventario::~Inventario() {
     {
         for (Objeto *objeto: objetos) {
-            delete objeto;
+           // delete objeto;
         }
     }
 }
