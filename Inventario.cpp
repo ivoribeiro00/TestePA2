@@ -57,7 +57,7 @@ void Inventario::removerObjeto(const std::string &nome) {
                 return;
             }
         }
-        std::cerr << "Objeto não existe no inventário " << nome << std::endl;
+        std::cerr << "Objeto: " << nome << " não existe no inventário!! "  << std::endl;
     }
 }
 
@@ -89,7 +89,7 @@ void Inventario::procurarObjeto() const {
         return;
     }
     std::string nome;
-    std::cout << "Digite o nome do objeto: " << std::endl;
+    std::cout << "Digite o nome do objeto que procura: " << std::endl;
     std::cin >> nome;
     for (const Objeto *objeto: objetos) {
         if (objeto->getNome() == nome) {
@@ -119,12 +119,16 @@ void Inventario::adicionarLivro() {
 
     std::cout << "Digite o nome do livro: " << std::endl;
     std::cin >> nome;
+    fflush(stdin);
     std::cout << "Digite o gênero do livro: " << std::endl;
     std::cin >> genero;
+    fflush(stdin);
     std::cout << "Digite o autor do livro: " << std::endl;
     std::cin >> autor;
-    std::cout << "Digite a localização do livro: " << std::endl;
+    fflush(stdin);
+    std::cout << "Digite o ano do livro: " << std::endl;
     std::cin >> ano;
+    fflush(stdin);
     Livro *livro = new Livro(nome, genero, autor, ano);
     adicionarObjeto(livro);
 }
@@ -132,20 +136,25 @@ void Inventario::adicionarLivro() {
 void Inventario::adicionarComponenteEletronico() {
     //tem que receber os dados do componente eletronico
     std::string nome;
-    std::string marca;
+    std::string genero;
     std::string dono;
     std::string localizacao;
 
     std::cout << "Digite o nome do componente eletronico: " << std::endl;
     std::cin >> nome;
+    //limpar o cin
+    fflush(stdin);
     std::cout << "Digite a marca do componente eletronico: " << std::endl;
-    std::cin >> marca;
+    std::cin >> genero;
+    fflush(stdin);
     std::cout << "Digite a descrição do componente eletronico: " << std::endl;
     std::cin >> dono;
+    fflush(stdin);
     std::cout << "Digite a localização do componente eletronico: " << std::endl;
     std::cin >> localizacao;
+    fflush(stdin);
 
-    ComponenteEletronico *componente = new ComponenteEletronico(nome, marca, dono, localizacao);
+    ComponenteEletronico *componente = new ComponenteEletronico(nome, genero, dono, localizacao);
     adicionarObjeto(componente);
 }
 
