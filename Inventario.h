@@ -28,7 +28,7 @@ public:
     // Remover objeto do inventário
     void removerObjeto(const std::string &nome);
 
-    // Listar objetos ordenados por nome
+    // Listar objetos ordenados por nomee
     void listarObjetosPorNome();
 
     // Procurar objeto
