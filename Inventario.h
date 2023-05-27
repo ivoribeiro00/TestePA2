@@ -13,6 +13,7 @@ class Inventario {
 private:
     std::vector<Objeto *> objetos;
     std::string filename;
+    // Funções auxiliares para leitura e escrita de objetos
     void read();
     void save();
 
@@ -36,9 +37,14 @@ public:
     // Apresentar Possivel Menu
     void apresentarMenu() const;
 
+    // Adicionar Livro
     void adicionarLivro();
 
+    // Adicionar Componente Eletronico
     void adicionarComponenteEletronico();
+
+    // Remover Objeto (receber o nome)
+    void auxRemoverObjeto();
 };
 
 

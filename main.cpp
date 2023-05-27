@@ -6,16 +6,6 @@ int main() {
     // Criar instância do inventário
     Inventario inventario("../inventario.txt");
 
-    //todo antes do menu ler o inventário do ficheiro
-
-
-    //todo tentar adicionarObjeto(pelo nome)
-
-    //todo tentar separar objetos por localizaçoes
-
-    //todo tentar escrever para ficheiro a lista de objeto que já estão dentro do inventario ao fechar menu
-
-
     int opcao = -1;
 
     //Mostrar menu
@@ -36,7 +26,7 @@ int main() {
                 break;
             case 3:
                 //Remover objeto
-                //inventario.removerObjeto();
+                inventario.auxRemoverObjeto();
                 break;
             case 4:
                 //Procurar objeto

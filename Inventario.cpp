@@ -61,6 +61,14 @@ void Inventario::removerObjeto(const std::string &nome) {
     }
 }
 
+void Inventario::auxRemoverObjeto() {
+    std::string nome;
+    std::cout << "Digite o nome do objeto: " << std::endl;
+    std::cin >> nome;
+    removerObjeto(nome);
+}
+
+
 // Listar objetos ordenados por nome
 void Inventario::listarObjetosPorNome() {
     std::vector<Objeto *> copiaObjetos(objetos.begin(), objetos.end());
@@ -75,7 +83,6 @@ void Inventario::listarObjetosPorNome() {
 
 // Procurar objeto
 void Inventario::procurarObjeto() const {
-
     //apenas procura se o inventário não estiver vazio
     if (objetos.empty()) {
         std::cerr << "Inventário vazio " << std::endl;
@@ -90,7 +97,6 @@ void Inventario::procurarObjeto() const {
             return;
         }
     }
-
 }
 
 void Inventario::apresentarMenu() const {
@@ -102,8 +108,6 @@ void Inventario::apresentarMenu() const {
     std::cout << "5 - Listar objetos" << std::endl;
     std::cout << "6 - Sair" << std::endl;
     std::cout << "Escolha uma opção: " << std::endl;
-
-
 }
 
 void Inventario::adicionarLivro() {
@@ -111,7 +115,7 @@ void Inventario::adicionarLivro() {
     std::string nome;
     std::string genero;
     std::string autor;
-    int exemplares;
+    int ano;
 
     std::cout << "Digite o nome do livro: " << std::endl;
     std::cin >> nome;
@@ -119,16 +123,13 @@ void Inventario::adicionarLivro() {
     std::cin >> genero;
     std::cout << "Digite o autor do livro: " << std::endl;
     std::cin >> autor;
-    std::cout << "Digite o número de exemplares do livro: " << std::endl;
-    std::cin >> exemplares;
-    Livro *livro = new Livro(nome, genero, autor, exemplares);
+    std::cout << "Digite a localização do livro: " << std::endl;
+    std::cin >> ano;
+    Livro *livro = new Livro(nome, genero, autor, ano);
     adicionarObjeto(livro);
-
-
 }
 
 void Inventario::adicionarComponenteEletronico() {
-
     //tem que receber os dados do componente eletronico
     std::string nome;
     std::string marca;
@@ -149,7 +150,6 @@ void Inventario::adicionarComponenteEletronico() {
 }
 
 void Inventario::read() {
-
     std::ifstream myfile(filename);
 
     if (myfile.is_open()) {
@@ -165,9 +165,9 @@ void Inventario::read() {
                 getline(myfile, genero);
                 std::string autor;
                 getline(myfile, autor);
-                int exemplares;
-                myfile >> exemplares;
-                Livro *livro = new Livro(nome, genero, autor, exemplares);
+                int ano;
+                myfile >> ano;
+                Livro *livro = new Livro(nome, genero, autor, ano);
                 objetos.push_back(livro);
             }
             if (line == "componente:") {
@@ -192,7 +192,6 @@ void Inventario::read() {
 }
 
 void Inventario::save() {
-
     std::ofstream myfile(filename);
 
     for (const Objeto *objeto: objetos) {
@@ -200,5 +199,6 @@ void Inventario::save() {
     }
     myfile.close();
 }
+
 
 

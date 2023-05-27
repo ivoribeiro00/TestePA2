@@ -10,18 +10,22 @@
 
 // Classe derivada para livros
 class Livro : public Objeto {
-    int exemplares;
+    int ano;
 
 public:
-    Livro(const std::string& nome, const std::string& genero, const std::string& autor, int exemplares)
-            : Objeto(nome, genero, autor), exemplares(exemplares) {}
+    Livro(const std::string& nome, const std::string& genero, const std::string& autor, const int& ano)
+            : Objeto(nome, genero, autor), ano(ano) {}
 
     // Getter
-    int getExemplares() const;
+    const int &getAno() const;
 
     // Impressão de informações do livro
     void imprimir() const override;
     void save(std::ostream &myfile) const override;
+
+
+
+
 };
 
 #endif //TESTEPA2_LIVRO_H
