@@ -16,3 +16,7 @@ void ComponenteEletronico::imprimir() const {
                   << ", Localização: " << localizacao << std::endl;
     }
 }
+
+void ComponenteEletronico::save(std::ostream &myfile) const {
+    myfile << "componente:" << std::endl << nome << std::endl << genero << std::endl << autor << std::endl << localizacao << std::endl;
+}

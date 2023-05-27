@@ -1,0 +1,10 @@
+livro:
+A Green Book
+Thriller
+A.thu
+5
+livro:
+habibi
+terror
+auth.lenow
+2

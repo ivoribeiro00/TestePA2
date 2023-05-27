@@ -22,6 +22,7 @@ public:
 
     // Impressão de informações do componente eletrônico
     void imprimir() const override;
+    void save(std::ostream &myfile) const override;
 };
 
 #endif //TESTEPA2_COMPONENTEELETRONICO_H

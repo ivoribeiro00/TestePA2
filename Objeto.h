@@ -36,6 +36,7 @@ public:
 
     // Função virtual para impressão de informações do objeto
     virtual void imprimir() const = 0;
+    virtual void save(std::ostream &myfile) const = 0;
 };
 
 

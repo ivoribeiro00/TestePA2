@@ -12,9 +12,12 @@
 class Inventario {
 private:
     std::vector<Objeto *> objetos;
+    std::string filename;
+    void read();
+    void save();
 
 public:
-
+    Inventario(std::string filename);
     // Destrutor para liberar memória alocada para objetos
     ~Inventario();
 
@@ -25,10 +28,17 @@ public:
     void removerObjeto(const std::string &nome);
 
     // Listar objetos ordenados por nome
-    void listarObjetosPorNome() const;
+    void listarObjetosPorNome();
 
     // Procurar objeto
     void procurarObjeto() const;
+
+    // Apresentar Possivel Menu
+    void apresentarMenu() const;
+
+    void adicionarLivro();
+
+    void adicionarComponenteEletronico();
 };
 
 

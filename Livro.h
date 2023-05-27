@@ -21,6 +21,7 @@ public:
 
     // Impressão de informações do livro
     void imprimir() const override;
+    void save(std::ostream &myfile) const override;
 };
 
 #endif //TESTEPA2_LIVRO_H
